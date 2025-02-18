@@ -1,27 +1,63 @@
 @font-face {
-    font-family: "Inter-regular";
-    src: url(../../assets/fonts/Inter/static/Inter_28pt-Regular.ttf)
-      format("woff2");
+  font-family: "Inter-regular";
+  src: url(../../assets/fonts/Inter/static/Inter_28pt-Regular.ttf)
+    format("woff2");
 }
-  
-$white: #ffffff;
 
-.btns {
+$white: #ffffff;
+$orange: #E17537;
+$darkblue: rgba(10, 37, 64, 1);
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 91.22px;
+  height: 33px;
+  border-radius: 16.5px;
+  background-color: $darkblue;
+  color: $white;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 13.95px;
+  line-height: 24px;
+  gap: 4px;
+  cursor: pointer;
+  transition: .3s all;
+  &.primary{
+    background: none;
+    color: $white;
+    width: 103.61px;
+    height: 23px;
+    border: none;
+    outline: none;
+  }
+  &.secondary{
+    background: $white;
+    color: $orange;
+    width: 91.22px;
+    height: 33px;
+    border: none;
+    outline: none;
+    border-radius: 16.5px;
+  }
+  .rows{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
-    font-size: 13.95px;
-    line-height: 24px;
-    .sign-in{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 91.22px;
-        height: 33px;
-        border-radius: 16.5px;
-        background-color: $white;
-        border: none;
-        outline: none;
+    margin-top: 4px;
+  }
+  .hover-row{
+    display: none;
+  }
+  &:hover{
+    .rows{
+      display: none;
+    }
+    .hover-row{
+      display: flex;
     }
   }
+}

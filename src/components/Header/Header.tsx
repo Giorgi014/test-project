@@ -1,6 +1,5 @@
 import React from "react";
 import Backgound from "../../assets/bg.png";
-import ContactBtn from "../Buttons/ContactBtn";
 import Button from "../Buttons/Button";
 import "./Header.scss";
 
@@ -22,10 +21,25 @@ const Header = () => {
           </ul>
         </div>
         <div className="btns">
-            <ContactBtn />
-            <Button />
+          <Button text={"Contact sales "} background="primary" />
+          <Button text={"Sign in"} background="secondary" />
         </div>
       </nav>
+      <div className="financial-infrastructure">
+        <h2>Financial infrastructure for the internet</h2>
+        <p>
+          Millions of companies of all sizes use Stripe online and in person to
+          accept payments, send payouts, automate financial processes, and
+          ultimately grow revenue.
+        </p>
+        <div className="email-address">
+          <input type="text" placeholder="Email address"/>
+          <Button text={"Start now"}/>
+         <div className="resp-btn">
+          <Button text={"Contact sales "} background="primary"/>
+         </div>
+        </div>
+      </div>
     </header>
   );
 };

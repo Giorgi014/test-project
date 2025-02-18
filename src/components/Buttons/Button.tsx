@@ -2,11 +2,15 @@ import React from "react";
 import { FaChevronRight, FaArrowRightLong } from "react-icons/fa6";
 import "./Button.scss";
 
-function Button() {
+type ButtonProps = {
+  text: string;
+  background?: string;
+};
+
+const Button: React.FC<ButtonProps> = ({ text, background }) => {
   return (
-    <div className="btn">
-      <button className="sign-in">
-        Sign in 
+      <button className={`button ${background}`}>
+        {text}
         <div className="rows">
           <div className="row">
             <FaChevronRight />
@@ -16,8 +20,8 @@ function Button() {
           </div>
         </div>
       </button>
-    </div>
   );
-}
+};
 
 export default Button;
+
