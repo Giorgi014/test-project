@@ -38,6 +38,7 @@ a {
 
 header {
   width: 100%;
+  overflow-x: hidden;
   .bg-image {
     width: 100%;
     height: 580px;
@@ -88,7 +89,6 @@ header {
     @include displaycenter(center, flex-start);
     width: clamp(350px, 90vw, 1080px);
     margin: 48px auto;
-    border: 1px solid red;
     .financial-infrastructure{
       width: 580px;
       h2{
@@ -155,10 +155,74 @@ header {
     .graphic-container{
       position: absolute;
       top: 0;
+      left: 150px;
       width: 975px;
       height: 571.85px;
       border-radius: 8px;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 25%, rgba(246, 249, 252, 0.3) 50%, #F6F9FC 60%);
+    .logo-and-search{
+      @include displaycenter(center, center);
+      margin: 24px 24px;
+      gap: 8px;
+      width: 434px;
+      color: $white;
+      .logo{
+        width: 20px;
+        height: 20px;
+        img{
+          width: 100%;
+        }
+      }
+      .logo-text{
+        @include displaycenter(center, center);
+        font-weight: 900;
+        font-size: 9.8px;
+        line-height: 14px;
+        letter-spacing: 0.8px;
+        gap: 8px;
+        .down-row{
+          font-size: 14px;
+        }
+      }
+      .search{
+        @include displaycenter(center, center);
+        position: relative;
+        width: 278px;
+        height: 20px;
+        border-radius: 4px;
+        background: $white;
+        color: $grey;
+        input{
+          padding-left: 30px;
+          width: 100%;
+          height: 100%;
+          border: none;
+          outline: none;
+          background: $white;
+          border-radius: 4px;
+          font-weight: 500;
+          font-size: 12.14px;
+          line-height: 14px;
+          letter-spacing: 0.2px;
+        }
+        .search-icon{
+          position: absolute;
+          left: 8px;
+          top: 1px;
+        }
+      }
+    }
+    }
+    .graphic{
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 795px;
+      height: 479.85px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import Backgound from "../../assets/bg.png";
-import Phone from "../../assets/phone.png"
-import Graphic from "../../assets/Container.svg"
+import Phone from "../../assets/phone.png";
+import Graphic from "../../assets/Container.svg";
+import Logo from "../../assets/Vector.png";
 import Button from "../Buttons/Button";
 import { Link } from "react-router-dom";
+import { IoSearchOutline, IoChevronDown } from "react-icons/io5";
 import "./Header.scss";
 
 const Header = () => {
@@ -57,15 +59,31 @@ const Header = () => {
           </div>
         </section>
         <section className="hero-graphic-container">
-                <div className="mobile">
-                  <img src={Phone} alt="" />
+          <div className="mobile">
+            <img src={Phone} alt="" />
+          </div>
+          <div className="graphic-container">
+            <div className="logo-and-search">
+              <div className="logo">
+                <img src={Logo} alt="" />
+              </div>
+              <div className="logo-text">
+                <h3>ROCKET RIDES</h3>
+                <div className="down-row">
+                  <IoChevronDown />
                 </div>
-                <div className="graphic-container">
-
-                  <div className="graphic">
-                    <img src={Graphic} alt="" />
-                  </div>
+              </div>
+              <div className="search">
+                <input type="text" placeholder="Search" readOnly />
+                <div className="search-icon">
+                  <IoSearchOutline />
                 </div>
+              </div>
+            </div>
+            <div className="graphic">
+              <img src={Graphic} alt="" />
+            </div>
+          </div>
         </section>
       </article>
     </header>
