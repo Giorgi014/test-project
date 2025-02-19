@@ -1,6 +1,9 @@
 import React from "react";
 import Backgound from "../../assets/bg.png";
+import Phone from "../../assets/phone.png"
+import Graphic from "../../assets/Container.svg"
 import Button from "../Buttons/Button";
+import { Link } from "react-router-dom";
 import "./Header.scss";
 
 const Header = () => {
@@ -13,11 +16,21 @@ const Header = () => {
         <div className="navigation">
           <h1>stripe</h1>
           <ul>
-            <li>Products</li>
-            <li>Solutions</li>
-            <li>Developers</li>
-            <li>Resources</li>
-            <li>Pricing</li>
+            <li>
+              <Link to={"Products"}>Products</Link>
+            </li>
+            <li>
+              <Link to={"Solutions"}>Solutions</Link>
+            </li>
+            <li>
+              <Link to={"Developers"}>Developers</Link>
+            </li>
+            <li>
+              <Link to={"Resources"}>Resources</Link>
+            </li>
+            <li>
+              <Link to={"Pricing"}>Pricing</Link>
+            </li>
           </ul>
         </div>
         <div className="btns">
@@ -25,21 +38,36 @@ const Header = () => {
           <Button text={"Sign in"} background="secondary" />
         </div>
       </nav>
-      <div className="financial-infrastructure">
-        <h2>Financial infrastructure for the internet</h2>
-        <p>
-          Millions of companies of all sizes use Stripe online and in person to
-          accept payments, send payouts, automate financial processes, and
-          ultimately grow revenue.
-        </p>
-        <div className="email-address">
-          <input type="text" placeholder="Email address"/>
-          <Button text={"Start now"}/>
-         <div className="resp-btn">
-          <Button text={"Contact sales "} background="primary"/>
-         </div>
-        </div>
-      </div>
+      <article className="financial-infrastructure-container">
+        <section className="financial-infrastructure">
+          <h2>Financial infrastructure for the internet</h2>
+          <p>
+            Millions of companies of all sizes use Stripe online and in person
+            to accept payments, send payouts, automate financial processes, and
+            ultimately grow revenue.
+          </p>
+          <div className="email-address">
+            <input type="text" placeholder="Email address" />
+            <div className="start-btn">
+              <Button text={"Start now"} />
+            </div>
+            <div className="resp-btn">
+              <Button text={"Contact sales "} background="primary" />
+            </div>
+          </div>
+        </section>
+        <section className="hero-graphic-container">
+                <div className="mobile">
+                  <img src={Phone} alt="" />
+                </div>
+                <div className="graphic-container">
+
+                  <div className="graphic">
+                    <img src={Graphic} alt="" />
+                  </div>
+                </div>
+        </section>
+      </article>
     </header>
   );
 };

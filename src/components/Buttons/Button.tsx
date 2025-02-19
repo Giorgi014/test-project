@@ -1,5 +1,6 @@
 import React from "react";
-import { FaChevronRight, FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa";
 import "./Button.scss";
 
 type ButtonProps = {
@@ -13,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({ text, background }) => {
         {text}
         <div className="rows">
           <div className="row">
-            <FaChevronRight />
+            <FaAngleRight />
           </div>
           <div className="hover-row">
             <FaArrowRightLong />
