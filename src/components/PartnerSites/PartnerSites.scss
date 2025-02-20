@@ -1,0 +1,49 @@
+@mixin displaycenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin displaygrid($justify, $align, $column) {
+  display: grid;
+  justify-content: $justify;
+  align-items: $align;
+  grid-template-columns: $column;
+}
+
+.partner-sites-container {
+  width: 100%;
+  .partner-sites {
+    @include displaygrid(center, center, repeat(2,auto));
+    margin: 0 auto 101px auto;
+    // width: 1080px;
+    width: clamp(350px, 90vw, 1080px);
+    background: 
+    linear-gradient(to right, #28282849 1px, transparent 1px) 0% 0%,
+    linear-gradient(to right, #28282849 1px, transparent 1px) 50% 0%,;
+    background-size: 49.7% 1px;
+    .upper-sites{
+        @include displaycenter(space-around, flex-start);
+        width: 540px;
+        height: 70px;
+        .site{
+            @include displaycenter(center, center);
+            width: 200px;
+            height: 40px;
+            border: 1px solid blue;
+        }
+    }
+    .down-sites{
+        @include displaycenter(space-around, flex-end);
+        width: 540px;
+        height: 70px;
+        .site{
+            @include displaycenter(center, center);
+            width: 200px;
+            height: 40px;
+            border: 1px solid blue;
+        }
+    }
+  }
+  
+}

@@ -7,6 +7,7 @@ import Button from "../Buttons/Button";
 import { Link } from "react-router-dom";
 import { IoSearchOutline, IoChevronDown } from "react-icons/io5";
 import "./Header.scss";
+import PartnerSites from "../PartnerSites/PartnerSites";
 
 const Header = () => {
   return (
@@ -86,6 +87,7 @@ const Header = () => {
           </div>
         </section>
       </article>
+      <PartnerSites/>
     </header>
   );
 };
