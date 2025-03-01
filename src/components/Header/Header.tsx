@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Backgound from "../../assets/bg.png";
 import Phone from "../../assets/phone.png";
 import Graphic from "../../assets/Container.svg";
 import Logo from "../../assets/Vector.png";
 import Button from "../Buttons/Button";
 import { Link } from "react-router-dom";
-import { IoSearchOutline, IoChevronDown } from "react-icons/io5";
-import "./Header.scss";
+import { IoSearchOutline, IoChevronDown, IoMenu, IoClose } from "react-icons/io5";
 import PartnerSites from "../PartnerSites/PartnerSites";
+import "./Header.scss";
 
-const Header = () => {
+const Header: React.FC = () => {
+
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
   return (
     <header>
       <div className="bg-image">
@@ -18,7 +21,7 @@ const Header = () => {
       <nav>
         <div className="navigation">
           <h1>stripe</h1>
-          <ul>
+          <ul className={menuOpen ? "open" : ""}>
             <li>
               <Link to={"Products"}>Products</Link>
             </li>
@@ -39,6 +42,10 @@ const Header = () => {
         <div className="btns">
           <Button text={"Contact sales "} background="primary" />
           <Button text={"Sign in"} background="secondary" />
+        </div>
+        <div className="responsive-menu">
+          <button className="open" onClick={() => setMenuOpen(true)}><IoMenu /></button>
+          <button className="close" onClick={() => setMenuOpen(false)}><IoClose /></button>
         </div>
       </nav>
       <article className="financial-infrastructure-container">

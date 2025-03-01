@@ -56,34 +56,39 @@ header {
     width: 90%;
     max-width: 1112px;
     margin: 0 auto;
-  }
-  .navigation {
-    @include displaycenter(center, center);
-  }
-  h1 {
-    color: $white;
-    font-family: "Inter-medium";
-  }
-  ul {
-    @include displaycenter(center, center);
-  }
-  li {
-    @include displaycenter(center, center);
-    width: 101px;
-    height: 44px;
-    a {
+    .navigation {
+      @include displaycenter(center, center);
+    }
+    h1 {
       color: $white;
-      font-weight: 500;
-      font-size: 13.83px;
-      line-height: 24px;
-      letter-spacing: 0.2px;
-      cursor: pointer;
+      font-family: "Inter-medium";
+    }
+    ul {
+      @include displaycenter(center, center);
+    }
+    li {
+      @include displaycenter(center, center);
+      width: 101px;
+      height: 44px;
+      a {
+        color: $white;
+        font-weight: 500;
+        font-size: 13.83px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        cursor: pointer;
+      }
+    }
+    .btns {
+      @include displaycenter(center, center);
+      gap: 16px;
+    }
+    .responsive-menu {
+      position: relative;
+      display: none;
     }
   }
-  .btns {
-    @include displaycenter(center, center);
-    gap: 16px;
-  }
+
   .financial-infrastructure-container {
     @include displaycenter(center, flex-start);
     width: clamp(350px, 90vw, 1080px);
@@ -153,7 +158,7 @@ header {
         width: 100%;
         height: 100%;
         border-radius: 36px;
-        border: 6px solid #F6F9FC;      
+        border: 6px solid #f6f9fc;
         box-shadow: 0px 50px 100px -29px rgba(50, 50, 93, 0.2509803922);
       }
     }
@@ -237,6 +242,62 @@ header {
       img {
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+}
+
+// Responsive ========================================
+
+@media screen and (max-width: 880px) {
+  nav {
+    ul {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #000;
+      flex-direction: column;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    ul.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .btns {
+      display: none;
+    }
+
+    .responsive-menu {
+      position: relative;
+      @include displaycenter(center, center);
+      .open {
+        @include displaycenter(center, center);
+        width: 48px;
+        height: 32px;
+        border-radius: 16px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.308);
+        color: $white;
+      }
+      .close {
+        @include displaycenter(center, center);
+        background: none;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-size: 25px;
+        position: absolute;
       }
     }
   }
