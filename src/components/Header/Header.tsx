@@ -5,12 +5,16 @@ import Graphic from "../../assets/Container.svg";
 import Logo from "../../assets/Vector.png";
 import Button from "../Buttons/Button";
 import { Link } from "react-router-dom";
-import { IoSearchOutline, IoChevronDown, IoMenu, IoClose } from "react-icons/io5";
+import {
+  IoSearchOutline,
+  IoChevronDown,
+  IoMenu,
+  IoClose,
+} from "react-icons/io5";
 import PartnerSites from "../PartnerSites/PartnerSites";
 import "./Header.scss";
 
 const Header: React.FC = () => {
-
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
@@ -44,8 +48,15 @@ const Header: React.FC = () => {
           <Button text={"Sign in"} background="secondary" />
         </div>
         <div className="responsive-menu">
-          <button className="open" onClick={() => setMenuOpen(true)}><IoMenu /></button>
-          <button className="close" onClick={() => setMenuOpen(false)}><IoClose /></button>
+          {!menuOpen ? (
+            <button className="open" onClick={() => setMenuOpen(true)}>
+              <IoMenu />
+            </button>
+          ) : (
+            <button className="close" onClick={() => setMenuOpen(false)}>
+              <IoClose />
+            </button>
+          )}
         </div>
       </nav>
       <article className="financial-infrastructure-container">
@@ -94,7 +105,7 @@ const Header: React.FC = () => {
           </div>
         </section>
       </article>
-      <PartnerSites/>
+      <PartnerSites />
     </header>
   );
 };

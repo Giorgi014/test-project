@@ -7,6 +7,7 @@
 $white: #ffffff;
 $orange: #E17537;
 $darkblue: rgba(10, 37, 64, 1);
+$purple: rgba(99, 91, 255, 1);
 
 @mixin dispalycenter{
   display: flex;
@@ -45,6 +46,22 @@ $darkblue: rgba(10, 37, 64, 1);
     border: none;
     outline: none;
     border-radius: 16.5px;
+  }
+  &.third{
+    background: $purple;
+    color: $white;
+    padding: 16px;
+    border: none;
+    outline: none;
+    border-radius: 16.5px;
+  }
+  &.forth{
+    background: none;
+    color: $purple;
+    width: 103.61px;
+    height: 23px;
+    border: none;
+    outline: none;
   }
   .rows{
     @include dispalycenter;

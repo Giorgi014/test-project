@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "Inter-regular";
+  src: url(../../assets/fonts/Inter/static/Inter_28pt-Regular.ttf)
+    format("woff2");
+}
+@font-face {
+  font-family: "Inter-medium";
+  src: url(../../assets/fonts/Inter/static/Inter_18pt-Medium.ttf)
+    format("woff2");
+}
+@font-face {
+  font-family: "Inter-bold";
+  src: url(../../assets/fonts/Inter/static/Inter_28pt-Bold.ttf) format("woff2");
+}
+
+$white: #ffffff;
+$black: #3a3a3a;
+$grey: #425466;
+
+@mixin displaycenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// KEYFRAMES ========================================
+
+@keyframes cartrotate {
+  0% {
+    transform: rotate(0deg);
+    top: 2px;
+    left: -15px;
+  }
+  25% {
+    transform: rotate(-45deg);
+    top: 5px;
+    left: -5px;
+  }
+  50% {
+    transform: rotate(-90deg);
+    top: 3px;
+    left: 4px;
+  }
+  75% {
+    transform: rotate(-45deg);
+    top: 5px;
+    left: -5px;
+  }
+  100% {
+    transform: rotate(0deg);
+    top: 2px;
+    left: -15px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.stripe-payments {
+  width: 100%;
+  background-color: rgb(246, 247, 249);
+  padding-top: 1px;
+  padding-bottom: 1px;
+  clip-path: polygon(0% 0, 240% 0%, 0% 100%, 0 0%);
+  .stripe-payments-content {
+    @include displaycenter(space-between, flex-start);
+    width: clamp(350px, 90vw, 1080px);
+    margin: 128px auto 287px auto;
+    padding-left: 16px;
+    .explore-stripe-payments {
+      width: 100%;
+      max-width: 540px;
+      h2 {
+        font-family: "Inter-medium";
+        font-size: 22.13px;
+        line-height: 32px;
+        letter-spacing: 0.1px;
+        color: rgba(10, 37, 64, 1);
+      }
+      p {
+        margin: 24px 0;
+        font-family: "Inter-regular";
+        font-weight: 500;
+        font-size: 16.45px;
+        line-height: 28px;
+        letter-spacing: 0.2px;
+        color: rgba(66, 84, 102, 1);
+        width: 100%;
+        max-width: 412px;
+      }
+      .btns {
+        @include displaycenter(flex-start, center);
+        gap: 16px;
+      }
+    }
+    .pay-and-integration {
+      @include displaycenter(center, center);
+      button {
+        margin-left: 16px;
+      }
+      h2 {
+        margin-top: 8px;
+        font-family: "Inter-medium";
+        font-weight: 500;
+        font-size: clamp(13.36px, 2vw, 14.06px);
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: rgba(10, 37, 64, 1);
+        padding-left: 16px;
+        border-left: 1px solid rgba(99, 91, 255, 1);
+      }
+      p {
+        margin: 8px 16px 11px 16px;
+        width: 100%;
+        max-width: 270px;
+        font-family: "Inter-regular";
+        font-weight: 500;
+        font-size: 13.48px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        padding-right: 40px;
+        color: rgba(66, 84, 102, 1);
+      }
+      .pay {
+        width: 100%;
+        max-width: 270px;
+        .pay-icons {
+          @include displaycenter(flex-start, center);
+          margin-left: 16px;
+          position: relative;
+          .green {
+            z-index: 1;
+            position: absolute;
+            animation: cartrotate 2s linear infinite;
+            animation-delay: 2s;
+            top: 2px;
+            left: -15px;
+          }
+          .purple {
+            z-index: 0;
+          }
+        }
+      }
+      .integration {
+        width: 100%;
+        max-width: 270px;
+        .integration-icons {
+          @include displaycenter(flex-start, center);
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+  .design-containers {
+    @include displaycenter(space-between, center);
+    position: relative;
+    .left-container {
+      .green-container {
+        z-index: 1;
+        position: absolute;
+        background: rgba(128, 234, 255, 0.788);
+        width: 160.84px;
+        height: 40px;
+        bottom: 70px;
+        left: 200px;
+        transform: rotate(-8.5deg);
+        clip-path: polygon(0% 0, 100% 0%, 0% 4000%, 0 0%);
+      }
+      .purple-container {
+        z-index: 0;
+        position: absolute;
+        background: rgba(122, 115, 255, 0.788);
+        width: 490.18px;
+        height: 40px;
+        transform: rotate(-8.5deg);
+        bottom: 35px;
+        left: -7px;
+        clip-path: polygon(0% 0, 100% 0%, 0% 4000%, 0 0%);
+      }
+    }
+  }
+}
+
+// RESPONSIVE ========================================
+
+@media screen and (max-width: 880px) {
+  .stripe-payments-content {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .pay-and-integration {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}

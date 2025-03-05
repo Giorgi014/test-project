@@ -250,54 +250,71 @@ header {
 // Responsive ========================================
 
 @media screen and (max-width: 880px) {
-  nav {
-    ul {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background: #000;
-      flex-direction: column;
-      text-align: center;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    ul.open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .btns {
-      display: none;
-    }
-
-    .responsive-menu {
-      position: relative;
-      @include displaycenter(center, center);
-      .open {
-        @include displaycenter(center, center);
-        width: 48px;
-        height: 32px;
-        border-radius: 16px;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        font-size: 16px;
-        background: rgba(255, 255, 255, 0.308);
-        color: $white;
+  header{
+    nav {
+      h1.open{
+        color: rgba(10, 37, 64, 1);
+        z-index: 99;
       }
-      .close {
+      ul {
+        display: none;
+        &.open {
+          display: flex;
+          position: absolute;
+          top: 0px;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: $white;
+          flex-direction: column;
+          @include displaycenter(flex-start, flex-start);
+          z-index: 98;
+          li{
+            margin-top: 50px;
+            width: 100%;
+            height: 44px;
+            @include displaycenter(flex-start, center);
+            border-bottom: 2px dashed rgba(171, 181, 197, 0.30196078431372547);
+            a{
+              margin-left: 20px;
+              color: $black;
+              font-size: 18px;
+              font-family: "Inter-bold";
+            }
+          }
+        }
+      }
+  
+      .btns {
+        display: none;
+      }
+  
+      .responsive-menu {
+        z-index: 99;
+        position: relative;
         @include displaycenter(center, center);
-        background: none;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        font-size: 25px;
-        position: absolute;
+        .open {
+          @include displaycenter(center, center);
+          width: 48px;
+          height: 32px;
+          border-radius: 16px;
+          cursor: pointer;
+          border: none;
+          outline: none;
+          font-size: 16px;
+          background: rgba(255, 255, 255, 0.308);
+          color: $white;
+        }
+        .close {
+          @include displaycenter(center, center);
+          background: none;
+          cursor: pointer;
+          border: none;
+          outline: none;
+          font-size: 25px;
+          position: absolute;
+          right: 10px;
+        }
       }
     }
   }
