@@ -1,24 +1,134 @@
 @font-face {
-    font-family: "Inter-regular";
-    src: url(../../assets/fonts/Inter/static/Inter_28pt-Regular.ttf)
-      format("woff2");
+  font-family: "Inter-regular";
+  src: url(../../assets/fonts/Inter/static/Inter_28pt-Regular.ttf)
+    format("woff2");
+}
+@font-face {
+  font-family: "Inter-medium";
+  src: url(../../assets/fonts/Inter/static/Inter_18pt-Medium.ttf)
+    format("woff2");
+}
+@font-face {
+  font-family: "Inter-bold";
+  src: url(../../assets/fonts/Inter/static/Inter_28pt-Bold.ttf) format("woff2");
+}
+
+$white: #ffffff;
+$black: #3a3a3a;
+$grey: #425466;
+
+@mixin displaycenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin displaygrid($template) {
+  display: grid;
+  grid-template-columns: $template;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  width: 100%;
+  .footer-container {
+    @include displaygrid(repeat(4, auto));
+    width: clamp(350px, 90vw, 1080px);
+    margin: 128px auto;
+    .footer-head-content {
+      @include displaycenter(space-between, flex-start);
+      flex-direction: column;
+      h2 {
+        font-family: "Inter-medium";
+        color: rgba(10, 37, 64, 1);
+        margin-bottom: 6px;
+      }
+      span {
+        @include displaycenter(flex-start, center);
+        gap: 10px;
+        font-family: "Inter-medium";
+        font-weight: 500;
+        font-size: 13.71px;
+        line-height: 24px;
+        color: rgba(10, 37, 64, 1);
+      }
+      .copyright {
+        font-family: "Inter-medium";
+        font-weight: 500;
+        font-size: 13.71px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: rgba(54, 70, 87, 1);
+      }
+    }
+    .footer-content {
+      ul {
+        list-style: none;
+        li {
+          margin: 8px 0;
+          a {
+            text-decoration: none;
+            color: rgba(10, 37, 64, 1);
+            font-family: "Inter-medium";
+            font-weight: 500;
+            font-size: 13.59px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            transition: .3s;
+            &:hover {
+              color: gray;
+            }
+          }
+        }
+      }
+      .products-and-pricing {
+        margin-bottom: 8px;
+      }
+      .solution {
+        margin-bottom: 8px;
+      }
+      .resources {
+        margin-bottom: 8px;
+      }
+      .solutions {
+        margin: 20px 0;
+      }
+      .developers {
+        margin-bottom: 8px;
+      }
+      .company {
+        margin-top: 20px;
+        margin-bottom: 8px;
+      }
+      .support {
+        margin-top: 20px;
+        margin-bottom: 8px;
+      }
+    }
   }
-  @font-face {
-    font-family: "Inter-medium";
-    src: url(../../assets/fonts/Inter/static/Inter_18pt-Medium.ttf)
-      format("woff2");
+}
+
+// RESPONSIVE ================================================
+
+@media screen and (max-width: 880px) {
+  footer {
+    .footer-container {
+      grid-template-columns: repeat(3, auto);
+    }
   }
-  @font-face {
-    font-family: "Inter-bold";
-    src: url(../../assets/fonts/Inter/static/Inter_28pt-Bold.ttf) format("woff2");
+}
+@media screen and (max-width: 700px) {
+  footer {
+    .footer-container {
+      grid-template-columns: repeat(2, auto);
+      .footer-head-content {
+        @include displaycenter(flex-start, flex-start);
+        flex-direction: column;
+      }
+    }
   }
-  
-  $white: #ffffff;
-  $black: #3a3a3a;
-  $grey: #425466;
-  
-  @mixin displaycenter($justify, $align) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-  }
+}

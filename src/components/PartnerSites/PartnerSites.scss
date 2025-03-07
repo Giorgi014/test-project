@@ -14,50 +14,60 @@
 .partner-sites-container {
   width: 100%;
   .partner-sites {
-    @include displaygrid(center, center, repeat(2,auto));
+    @include displaygrid(center, center, repeat(2, auto));
     margin: 0 auto 101px auto;
     width: clamp(350px, 90vw, 1080px);
-    background: 
-    linear-gradient(to right, #d8d8d849 1px, transparent 1px) 0% 0%,
-    linear-gradient(to right, #d8d8d849 1px, transparent 1px) 50% 0%,;
+    background: linear-gradient(to right, #d8d8d849 1px, transparent 1px) 0% 0%,
+      linear-gradient(to right, #d8d8d849 1px, transparent 1px) 50% 0%;
     background-size: 49.7% 1px;
-    .upper-sites{
-        @include displaycenter(space-around, flex-start);
-        width: clamp(208px, 47vw, 540px);
-        height: 70px;
-        .site{
-            @include displaycenter(center, center);
-            width: clamp(160px, 24vw, 200px);
-            height: 40px;
-            border: 1px solid blue;
-            img{
-              width: min-content;
-              height: min-content
-            }
+    .upper-sites {
+      @include displaycenter(space-around, flex-start);
+      width: clamp(208px, 47vw, 540px);
+      height: 70px;
+      .site {
+        @include displaycenter(center, center);
+        width: clamp(160px, 24vw, 200px);
+        height: 40px;
+        img {
+          width: min-content;
+          height: min-content;
         }
+      }
     }
-    .down-sites{
-        @include displaycenter(space-around, flex-end);
-        width: clamp(208px, 47vw, 540px);
-        height: 70px;
-        .site{
-            @include displaycenter(center, center);
-            width: clamp(160px, 24vw, 200px);
-            height: 40px;
-            border: 1px solid blue;
-            img{
-              width: min-content;
-              height: min-content
-            }
+    .down-sites {
+      @include displaycenter(space-around, flex-end);
+      width: clamp(208px, 47vw, 540px);
+      height: 70px;
+      .site {
+        @include displaycenter(center, center);
+        width: clamp(160px, 24vw, 200px);
+        height: 40px;
+        img {
+          width: min-content;
+          height: min-content;
         }
+      }
     }
   }
-  
 }
 
-
-@media screen and (max-width:766px){
-  .partner-sites {
-
+@media screen and (max-width: 766px) {
+  .partner-sites-container {
+    // background: linear-gradient(to right, #d8d8d849 1px, transparent 1px) 0% 0%,
+    //   linear-gradient(to right, #d8d8d849 1px, transparent 1px) 50% 0%;
+    // background-size: 49.7% 1px;
+    .partner-sites {
+      @include displaygrid(center, center, repeat(1, auto));
+      .upper-sites {
+        @include displaycenter(center, center);
+        width: clamp(208px, 77vw, 540px);
+        gap: 20px;
+      }
+      .down-sites {
+        @include displaycenter(center, center);
+        width: clamp(208px, 77vw, 540px);
+        gap: 20px;
+      }
+    }
   }
 }
