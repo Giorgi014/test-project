@@ -10,7 +10,7 @@ import Marriott from "../../assets/mariot.png";
 import "./PartnerSites.scss";
 
 
-const PartnerSites = () => {
+const PartnerSites:React.FC = () => {
   return (
     <div className="partner-sites-container">
       <div className="partner-sites">
