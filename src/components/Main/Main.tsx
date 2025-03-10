@@ -1,13 +1,15 @@
-import React from 'react'
-import StripePayments from '../StripePayments/StripePayments';
-import './Main.scss'
+import React from "react";
+import StripePayments from "../StripePayments/StripePayments";
+import "./Main.scss";
+import Growth from "../Growth/Growth";
 
 const Main: React.FC = () => {
   return (
     <main>
-        <StripePayments/>
+      <Growth />
+      <StripePayments />
     </main>
-  )
-}
+  );
+};
 
 export default Main;
