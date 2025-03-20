@@ -1,9 +1,8 @@
-import React from "react";
 import { Atlas, Atlas1, Payments, Payments1, Checkout, Checkout1, Invoicing, Invoicing1 } from "../Hub/Hub";
 import Button from "../Buttons/Button";
 import "./Growth.scss";
 
-const Growth: React.FC = () => {
+const Growth = () => {
   return (
     <article className="growth-container">
       <section className="growth">

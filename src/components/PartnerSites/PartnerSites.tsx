@@ -1,9 +1,8 @@
-import React from "react";
 import { Amazon, Saleforce, Google, Urbn, Shopify, Whatsapp, Bmw, Marriott } from "../Hub/Hub";
 import "./PartnerSites.scss";
 
 
-const PartnerSites:React.FC = () => {
+const PartnerSites = () => {
   return (
     <div className="partner-sites-container">
       <div className="partner-sites">

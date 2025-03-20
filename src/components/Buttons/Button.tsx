@@ -1,4 +1,3 @@
-import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa";
 import "./Button.scss";
@@ -8,7 +7,7 @@ type ButtonProps = {
   background?: string;
 };
 
-const Button: React.FC<ButtonProps> = ({ text, background }) => {
+const Button = ({ text, background }: ButtonProps) => {
   return (
       <button className={`button ${background}`}>
         {text}

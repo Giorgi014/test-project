@@ -1,9 +1,8 @@
-import React from "react";
 import Send from "../../assets/send.png";
 import { Link } from "react-router-dom";
 import "./Footer.scss";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer>
       <section className="footer-container">

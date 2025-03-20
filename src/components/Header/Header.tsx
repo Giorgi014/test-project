@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "../Buttons/Button";
 import { Backgound, Phone, Graphic, Logo} from "../Hub/Hub";
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ import {
 import PartnerSites from "../PartnerSites/PartnerSites";
 import "./Header.scss";
 
-const Header: React.FC = () => {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (

@@ -1,9 +1,8 @@
-import React from "react";
 import Button from "../Buttons/Button";
 import { Green, Purple, Green1, Purple1 } from "../Hub/Hub";
 import "./StripePayments.scss";
 
-const StripePayments: React.FC = () => {
+const StripePayments = () => {
   return (
     <article className="stripe-payments">
       <section className="stripe-payments-content">
