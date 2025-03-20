@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import Backgound from "../../assets/bg.png";
-import Phone from "../../assets/phone.png";
-import Graphic from "../../assets/Container.svg";
-import Logo from "../../assets/Vector.png";
 import Button from "../Buttons/Button";
+import { Backgound, Phone, Graphic, Logo} from "../Hub/Hub";
 import { Link } from "react-router-dom";
 import {
   IoSearchOutline,

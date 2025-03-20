@@ -1,12 +1,5 @@
 import React from "react";
-import Amazon from "../../assets/amazon.png";
-import Saleforce from "../../assets/salesforce.png";
-import Google from "../../assets/google.png";
-import Urbn from "../../assets/urbn.png";
-import Shopify from "../../assets/shopify.png";
-import Whatsapp from "../../assets/whatsapp.png";
-import Bmw from "../../assets/bmw.png";
-import Marriott from "../../assets/mariot.png";
+import { Amazon, Saleforce, Google, Urbn, Shopify, Whatsapp, Bmw, Marriott } from "../Hub/Hub";
 import "./PartnerSites.scss";
 
 

@@ -1,9 +1,6 @@
 import React from "react";
 import Button from "../Buttons/Button";
-import Green from "../../assets/green.png";
-import Purple from "../../assets/purple.png";
-import Green1 from "../../assets/green1.png";
-import Purple1 from "../../assets/purple1.png";
+import { Green, Purple, Green1, Purple1 } from "../Hub/Hub";
 import "./StripePayments.scss";
 
 const StripePayments: React.FC = () => {

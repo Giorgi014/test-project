@@ -1,12 +1,5 @@
 import React from "react";
-import Atlas from "../../assets/atlas.png";
-import Atlas1 from "../../assets/atlas_home_rocketrides_English_US.svg.png";
-import Payments from "../../assets/bluesvg-7.png";
-import Payments1 from "../../assets/Figure-2.png";
-import Checkout from "../../assets/purple-8.png";
-import Checkout1 from "../../assets/Figure-3.png";
-import Invoicing from "../../assets/greensvg-9.png";
-import Invoicing1 from "../../assets/Figure-4.png";
+import { Atlas, Atlas1, Payments, Payments1, Checkout, Checkout1, Invoicing, Invoicing1 } from "../Hub/Hub";
 import Button from "../Buttons/Button";
 import "./Growth.scss";
 
